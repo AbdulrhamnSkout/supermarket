@@ -1,0 +1,35 @@
+div {
+    width: 300px;
+    margin: 50px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input, label {
+    text-align: center;
+    margin: 20px auto;
+	/* width: 80%; */
+    width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+    font-weight: bold;
+}
+input {
+ width: 90%;
+}
+/* a{
+    display: block;
+    font-size: x-large;
+    text-align: center;
+} */
+
+span {
+    display: block;
+    margin-bottom: 30px;
+    color: #bf2717;
+}
+button{
+    width: 100px;
+    margin:  15px;
+}

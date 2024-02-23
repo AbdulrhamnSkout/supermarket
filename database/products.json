@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "61bf45073d7d55334cfc2d97"
+  },
+  "name": "bread",
+  "price": 30,
+  "categoryId": {
+    "$oid": "61ba2a2835d1999465afc813"
+  },
+  "imageName": "2838a29f-1c0c-4639-9d75-78a82468f697.jpg"
+},{
+  "_id": {
+    "$oid": "61bf45843d7d55334cfc2d99"
+  },
+  "name": "Rye bread",
+  "price": 55,
+  "categoryId": {
+    "$oid": "61ba2a2835d1999465afc813"
+  },
+  "imageName": "25e94805-a528-40e2-814a-42c9a36665fb.jpg"
+},{
+  "_id": {
+    "$oid": "61bf45a13d7d55334cfc2d9b"
+  },
+  "name": "coca cola",
+  "price": 8,
+  "categoryId": {
+    "$oid": "61ba2a7635d1999465afc819"
+  },
+  "imageName": "66c2cc27-232d-4aea-8135-bf7c79d214a3.png"
+},{
+  "_id": {
+    "$oid": "61bf45c13d7d55334cfc2d9d"
+  },
+  "name": "water",
+  "price": 5,
+  "categoryId": {
+    "$oid": "61ba2a7635d1999465afc819"
+  },
+  "imageName": "cd6a1cd2-6935-4f77-b1ad-8ea13f298982.png"
+},{
+  "_id": {
+    "$oid": "61bf46ab3d7d55334cfc2d9f"
+  },
+  "name": "salmon",
+  "price": 81,
+  "categoryId": {
+    "$oid": "61ba2aab35d1999465afc81c"
+  },
+  "imageName": "ed85e0ab-25ed-4afe-86c1-6c04c83285ff.png"
+},{
+  "_id": {
+    "$oid": "61bf47003d7d55334cfc2da1"
+  },
+  "name": "Peter's Fish",
+  "price": 55,
+  "categoryId": {
+    "$oid": "61ba2aab35d1999465afc81c"
+  },
+  "imageName": "9bc379ba-2b08-48a3-9b85-49edb833de2e.png"
+}]

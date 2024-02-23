@@ -1,0 +1,28 @@
+<div>
+    <div class="card">
+        <div class="card-body">
+            Total orders placed :{{orders?.length || 0}}
+            <br>
+            The amount products available on the site: {{products?.length || 0}}
+        </div>
+    </div>
+
+    <app-login *ngIf="!user"></app-login>
+
+    <div *ngIf="user" class="user-menu">
+        <h4>
+            hello {{user?.firstName}}
+        </h4>
+
+        <span *ngIf="lastOrder && cart?.completed">Your last purchase date: {{
+            lastOrder.orderDate?.toString().split('T')[0] }}</span><br><br>
+
+        <span *ngIf="cart && !cart?.completed">You have a cart that has not been closed since:
+            <b>{{cart.dateOfCreationCart?.toString().split('T')[0]}} </b><br>
+            <a routerLink="/products">press here to complete your order</a></span>
+        <h2 *ngIf="!cart">  Let's buy </h2>
+        <button class="btn btn-outline-info" *ngIf="cart?.completed || !cart" (click)="addCart()"><b>+</b> click here to start</button>
+    </div>
+
+
+</div>

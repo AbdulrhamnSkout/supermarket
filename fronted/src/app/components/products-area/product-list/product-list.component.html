@@ -1,0 +1,28 @@
+<div>
+    <app-customer-cart *ngIf="!isAdmin" [orderShow]="false" class="cart"></app-customer-cart>
+    <div class="products">
+
+        <label>Search</label><br>
+        <input type="search" (input)="searchProducts($event)"/>
+        <hr>
+
+        <ul>
+            <li *ngFor="let category of categories">
+                <button class="btn btn-outline-primary" (click)="productsByCategory($event)" value={{category._id}}>{{category.name}}</button>
+            </li>
+        </ul>
+
+        <a routerLink="/admin-actions" *ngIf="isAdmin">+ Add product</a>
+        <hr>
+
+        <a routerLink="/products" (click)="allProducts()"> All the product </a>
+        <span>|</span>
+        <a *ngIf="!isAdmin" routerLink="/home"> home </a>
+
+        <div class="list">
+            <span *ngIf="!products?.length">no result</span>
+            <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+        </div>
+    </div>
+</div>
+

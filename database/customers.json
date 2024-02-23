@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "61bf14933d7d55334cfc2d74"
+  },
+  "isAdmin": true,
+  "idNumber": "123456789",
+  "email": "admin@gmail.com",
+  "password": "b472b897de212b8a0fb2c7ea1b96bcf650fcbf71ee3f016c5d65add806545a02ee810f87523b460332ecf900fbfdac412a60943fc287a846c824cd5adeaccfa1",
+  "city": "TelAviv",
+  "street": "qqq",
+  "firstName": "admin",
+  "lastName": "admin"
+},{
+  "_id": {
+    "$oid": "61bf3f393d7d55334cfc2d83"
+  },
+  "isAdmin": false,
+  "idNumber": "123456788",
+  "email": "user@gmail.com",
+  "password": "1858b86f3f3a647595ac7411f443c419bd55d211514e381fde7257c4261b784c2980407bccbe436f0a34fd3607e5ad94e1e35aa41944d1cfbcc71d8aa35e6607",
+  "city": "BeerSheva",
+  "street": "almohtar",
+  "firstName": "user",
+  "lastName": "user"
+}]

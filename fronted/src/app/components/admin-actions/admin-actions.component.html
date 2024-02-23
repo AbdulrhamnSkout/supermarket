@@ -1,0 +1,30 @@
+<div>
+
+    <form #myForm="ngForm" (submit)="send()">
+
+        <label>product name:</label>
+        <input #nameBox="ngModel" type="text" name="name" [(ngModel)]="product.name" required minlength="2">
+        <span *ngIf="nameBox.errors?.required && nameBox.touched">Missing product name</span>
+        <span *ngIf="nameBox.errors?.minlength && nameBox.touched">Product name must contain more than 2 letters</span>
+
+        <label>category</label>
+        <select #categoryBox="ngModel" [(ngModel)]="product.categoryId" name="category" required>
+            <option *ngFor="let category of categories" value="{{category._id}}">{{category.name}}</option>
+        </select>
+        <span *ngIf="categoryBox.errors?.required && categoryBox.touched">Missing category</span>
+
+        <label>price:</label>
+        <input #priceBox="ngModel" type="number" step="0.01" [(ngModel)]="product.price" name="price" required>
+        <span *ngIf="priceBox.invalid && priceBox.touched">Missing img</span>
+
+        <label>img</label>
+        <input *ngIf="!editStatus" type="file" accept="image/*" (change)="saveImage($event)" (blur)="imageBlur()" required>
+        <span *ngIf="!editStatus && imageVisited && !product.image">Missing image.</span>
+
+        <input *ngIf="editStatus" type="file" accept="image/*" (change)="saveImage($event)">
+
+        <button [disabled]="myForm.form.invalid" *ngIf="editStatus">edit product</button>
+        <button class="btn btn-success" [disabled]="myForm.form.invalid" *ngIf="!editStatus">add product</button>
+    </form>
+
+</div>

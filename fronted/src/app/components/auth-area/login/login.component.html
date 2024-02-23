@@ -1,0 +1,17 @@
+<div>
+    <form #myForm="ngForm" (submit)="login()">
+
+        <label>email</label>
+        <input #emailBox="ngModel" type="text" name="email" [(ngModel)]="credentials.email" required>
+        <span *ngIf="emailBox.errors?.required && emailBox.touched">Missing email</span>
+
+        <label>password</label>
+        <input #passwordBox="ngModel" type="password" name="password" [(ngModel)]="credentials.password" required>
+        <span *ngIf="passwordBox.errors?.required && passwordBox.touched">Missing password</span>
+
+         <a class="btn btn-primary" routerLink="/register"> register </a>
+
+        <button class="btn btn-success" [disabled]="myForm.form.invalid">login</button>
+    </form>
+
+</div>

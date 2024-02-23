@@ -1,0 +1,27 @@
+<div>
+    <app-customer-cart [orderShow]="true"></app-customer-cart>
+    <br>
+    <form #myForm="ngForm" (submit)="addOrder()">
+        <h5>delivery details</h5>
+        <label>City</label>
+        <input (dblclick)="autoComplete()" #cityBox="ngModel" type="text" name="city" [(ngModel)]="order.city" required  minlength="2"> 
+        <span *ngIf="cityBox.errors?.required && cityBox.touched">Missing city</span>
+        <span *ngIf="cityBox.errors?.minlength && cityBox.touched">City name must contain more than 2 letters</span>
+
+        <label>Address</label> 
+        <input (dblclick)="autoComplete()" #streetBox="ngModel" type="text" name="street" [(ngModel)]="order.street" required  minlength="2">
+        <span *ngIf="streetBox.errors?.required && streetBox.touched">Missing Address </span>
+        <span *ngIf="streetBox.errors?.minlength && streetBox.touched">A Address must contain more than 2 letters </span>
+
+        <label>Order Date </label>
+        <input #deliveryDateBox="ngModel" type="date" name="deliveryDate" [(ngModel)]="order.deliveryDate" required min={{today}}>
+        <span *ngIf="deliveryDateBox.errors?.required && deliveryDateBox.touched">Missing order date</span>
+
+        <label> Credit card </label>
+        <input #creditCardBox="ngModel" type="text" name="creditCard" [(ngModel)]="order.creditCard" required pattern="\d{4}[\s\-]*\d{4}[\s\-]*\d{4}[\s\-]*\d{4}">
+        <span *ngIf="creditCardBox.errors?.required && creditCardBox.touched">missing Credit card </span>
+        <span *ngIf="creditCardBox.errors?.pattern && creditCardBox.touched">not valid Credit card</span>
+
+        <button class="btn btn-success"[disabled]="myForm.form.invalid"> done </button>
+    </form>
+</div>

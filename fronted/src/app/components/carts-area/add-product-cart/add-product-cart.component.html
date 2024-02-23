@@ -1,0 +1,15 @@
+<div class="modal fade" [id]="product._id" tabindex="-1" role="dialog"  
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <label>Select quantity </label><br>
+                <input [(ngModel)]="cartProduct.quantity" name="quantity" type="number" min="1"><br><br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                    <button type="button"  class="btn btn-success" (click)="addCartProduct()" data-dismiss="modal">add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

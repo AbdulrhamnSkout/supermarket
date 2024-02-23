@@ -1,0 +1,48 @@
+div {
+    /* width: 80%; */
+    width: 40%;
+    margin: 30px auto;
+    text-align: center;
+    background-color: rgb(252, 252, 252);
+    border-radius: 10px;
+    /* height: 100%; */
+}
+
+form > select {
+    width: 80%;
+    border: 1px solid #bf2717;
+    border-radius: 10px;
+}
+
+form {
+    width: 300px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+input, label {
+    margin: 20px auto;
+	width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+    font-weight: bold;
+}
+
+
+
+span {
+    display: block;
+    margin-bottom: 30px;
+    color: #bf2717;
+}
+
+h5 {
+    color: #bf2717;
+}
+button,a{
+    display: block;
+    margin-left: 25%;
+    margin-top:20px ;
+    width: 60%;
+}

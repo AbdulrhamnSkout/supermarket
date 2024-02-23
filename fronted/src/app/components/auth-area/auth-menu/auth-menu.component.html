@@ -1,0 +1,11 @@
+<div>
+
+    <ng-container *ngIf="!user">
+        <h4>hello guest</h4>
+    </ng-container>
+
+    <ng-container *ngIf="user">
+        <a  class="btn btn-outline-secondary" routerLink="/logout" routerLinkActive="active"> logout </a>
+    </ng-container>
+
+</div>

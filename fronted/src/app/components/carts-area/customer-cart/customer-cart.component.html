@@ -1,0 +1,34 @@
+<div class="rectangle" [ngStyle]="style" mwlResizable [validateResize]="validate" [enableGhostResize]="true"
+    [resizeSnapGrid]="{ left: 50, right: 50 }" (resizeEnd)="onResizeEnd($event)">
+    <div  *ngIf="!orderShow" class="resize-handle-top" mwlResizeHandle [resizeEdges]="{ top: true }"></div>
+    <div  *ngIf="!orderShow" class="resize-handle-left" mwlResizeHandle [resizeEdges]="{ left: true }"></div>
+    <div  *ngIf="!orderShow" class="resize-handle-right" mwlResizeHandle [resizeEdges]="{ right: true }"></div>
+    <div  *ngIf="!orderShow" class="resize-handle-bottom" mwlResizeHandle [resizeEdges]="{ bottom: true }"></div>
+    
+    <label *ngIf="!orderShow"><b>My cart</b></label>
+    <label *ngIf="orderShow">Search the store </label><br>
+    <input *ngIf="orderShow" type="search" (input)="searchProducts($event)"/>
+
+    <div *ngFor="let item of cartProducts" class="cart-products">
+        <button *ngIf="!orderShow" class="delete-product btn btn-secondary" (click)="deleteCartProduct(item._id)">X</button>
+        <img src='http://localhost:3001/api/products/images/{{item.product.imageName}}' width="40" height="40" alt={{item.product._id}}> 
+        <b>{{item.quantity}} </b> 
+        <span *ngIf="!orderShow"> {{item.product.name}}</span> 
+
+        <span *ngIf="orderShow">
+            <mark *ngIf="mark" class="mark">{{item.product.name}}</mark>
+            <b *ngIf="!mark">{{item.product.name}}</b>
+        </span>
+
+          - {{item.totalPrice.toFixed(2) || 0}} 
+    </div>
+
+    <div *ngIf="cartProducts.length !== 0" class="cart-bottom">total Price: <br><b>{{totalCartPrice.toFixed(2)}}</b><br>
+
+        <button *ngIf="!orderShow" class="btn btn-secondary" (click)="deleteAllCartProducts()">Clean cart</button>
+        
+        <a  class="btn btn-outline-success" *ngIf="!orderShow" routerLink="/order">Order now</a>
+        <br>
+        <a *ngIf="orderShow" routerLink="/products">back to product page</a>
+    </div>
+</div>
